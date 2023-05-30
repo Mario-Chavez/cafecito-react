@@ -13,8 +13,6 @@ function App() {
         <>
             <Menu />
             <Inicio />
-            <h1 className="display-4 text-center">Cafecito</h1>
-            <hr />
             <Container className="my-5 mainPage">
                 <Formulario />
             </Container>

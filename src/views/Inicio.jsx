@@ -1,11 +1,14 @@
 import React from "react";
-import Menu from "../components/common/Menu";
 import CarouselComp from "../components/common/Carousel";
+import CardProducto from "./producto/CardProducto";
 
 const Inicio = () => {
     return (
         <>
             <CarouselComp />
+            <h1 className="display-4 text-center">Nuestros Productos</h1>
+            <hr />
+            <CardProducto />
         </>
     );
 };

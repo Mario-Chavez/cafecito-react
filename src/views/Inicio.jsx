@@ -1,11 +1,11 @@
 import React from "react";
 import Menu from "../components/common/Menu";
-import SliderComponent from "../components/common/Slider";
+import CarouselComp from "../components/common/Carousel";
 
 const Inicio = () => {
     return (
         <>
-            <SliderComponent />
+            <CarouselComp />
         </>
     );
 };

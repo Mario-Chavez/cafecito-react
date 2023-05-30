@@ -2,11 +2,7 @@ import React from "react";
 import Menu from "../components/common/Menu";
 
 const Inicio = () => {
-    return (
-        <>
-            <Menu></Menu>
-        </>
-    );
+    return <></>;
 };
 
 export default Inicio;

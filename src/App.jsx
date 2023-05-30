@@ -3,19 +3,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import Formulario from "./components/Formulario";
 import Inicio from "./views/Inicio";
+import Footer from "./components/common/Footer";
+import Menu from "./components/common/Menu";
 
 function App() {
     return (
         <>
-            <Inicio />
+            <Menu />
             <Container className="my-5 mainPage">
+                <Inicio />
                 <h1 className="display-4 text-center">Cafecito</h1>
                 <hr />
                 <Formulario />
             </Container>
-            <footer className="bg-dark text-light text-center py-5">
-                <p> &copy; Todos los derechos reservados</p>
-            </footer>
+            <Footer />
         </>
     );
 }

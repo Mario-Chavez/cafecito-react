@@ -17,21 +17,21 @@ const SliderComponent = () => {
             <div>
                 <img
                     // className="object-fit-cover w-100 h-50"
-                    src="https://www.bloomberglinea.com/resizer/zSF2RafiCDOFA81QnqlWUa1GwYA=/1200x900/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/bloomberglinea/QMA63E5VYRE73GKYMOGAX5UBXU.jpg"
+                    src="https://thumbs.dreamstime.com/b/fondo-asado-fresco-del-grano-de-caf%C3%A9-con-express-una-taza-espumoso-caliente-colocado-al-lado-derecho-en-bandera-ancha-panorama-el-148693522.jpg"
                     alt="Slide 1"
                 />
             </div>
             <div>
                 <img
                     // className="object-fit-cover w-100 h-75"
-                    src="https://images.ecestaticos.com/wt_vheMICWutxWMdqaEH1UWyBps=/353x38:2118x1359/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F152%2F6b0%2Feff%2F1526b0eff12fad54065976f56c5b9e18.jpg"
+                    src="https://lushfabric.com/wp-content/uploads/2019/01/coffee-beans-bean-cafe-cotton-fabric-curtain-upholstery-craft-material-140cm-wide-brown-5c41e2a01.jpg"
                     alt="Slide 1"
                 />
             </div>
             <div>
                 <img
                     // className="object-fit-cover w-100"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_small_cup_of_coffee.JPG/1200px-A_small_cup_of_coffee.JPG"
+                    src="https://thumbs.dreamstime.com/b/ternera-de-caf%C3%A9-con-espuma-marr%C3%B3n-dentro-y-fondo-blanco-para-el-texto-espacio-vac%C3%ADo-su-dise%C3%B1o-vista-superior-169157208.jpg"
                     alt="Slide 1"
                 />
             </div>

@@ -12,10 +12,10 @@ function App() {
     return (
         <>
             <Menu />
+            <Inicio />
+            <h1 className="display-4 text-center">Cafecito</h1>
+            <hr />
             <Container className="my-5 mainPage">
-                <Inicio />
-                <h1 className="display-4 text-center">Cafecito</h1>
-                <hr />
                 <Formulario />
             </Container>
             <Footer />

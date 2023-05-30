@@ -7,12 +7,17 @@
     flex-grow:1;
 }
 
-.formulario {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-   
-  }
-.botonFormulario {
-    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.75); 
-   
-  }
-  
+.slider {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.slider .slick-slide {
+  text-align: center;
+}
+
+.slider .slick-slide img {
+  max-width: 100%;
+  height: auto;
+}

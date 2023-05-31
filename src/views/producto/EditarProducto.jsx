@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
@@ -17,7 +16,7 @@ const EditarProducto = () => {
     };
 
     return (
-        <section>
+        <section className="container">
             <h1 className="display-4 text-center mb-5">Editar Productos</h1>
             <Form
                 onSubmit={handleSubmit(onSubmit)}

@@ -13,9 +13,7 @@ function App() {
         <>
             <Menu />
             <Inicio />
-            <Container className="my-5 mainPage">
-                <Formulario />
-            </Container>
+            <Container className="my-5 mainPage"></Container>
             <Footer />
         </>
     );

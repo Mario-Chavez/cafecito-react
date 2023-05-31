@@ -3,6 +3,9 @@ import CarouselComp from "../components/common/Carousel";
 import CardProducto from "./producto/CardProducto";
 import EditarProducto from "./producto/EditarProducto";
 import CrearProducto from "./producto/CrearProducto";
+import ItemProducto from "./producto/ItemProducto";
+import DetalleProducto from "./DetalleProducto";
+import Error404 from "./Error404";
 
 const Inicio = () => {
     return (
@@ -13,6 +16,9 @@ const Inicio = () => {
             <CardProducto />
             {/* <EditarProducto /> */}
             <CrearProducto />
+            {/* <ItemProducto /> */}
+            {/* <DetalleProducto />
+            <Error404 /> */}
         </>
     );
 };

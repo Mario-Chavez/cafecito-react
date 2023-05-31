@@ -9,6 +9,10 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 -   Node.js: https://nodejs.org (versión recomendada: LTS)
 -   NPM: Viene incluido con Node.js, pero se recomienda verificar si está actualizado ejecutando `npm install -g npm`
 
+## comando para ejecutar json server
+
+json-server --watch db.json --port 3004
+
 ## Configuración inicial
 
 Sigue estos pasos para configurar el proyecto en tu entorno local:

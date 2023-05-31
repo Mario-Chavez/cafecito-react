@@ -14,8 +14,9 @@ const Inicio = () => {
             <h1 className="display-4 text-center">Nuestros Productos</h1>
             <hr />
             <CardProducto />
+
             {/* <EditarProducto /> */}
-            <CrearProducto />
+            {/* <CrearProducto /> */}
             {/* <ItemProducto /> */}
             {/* <DetalleProducto />
             <Error404 /> */}

@@ -50,10 +50,10 @@ const EditarProducto = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Precio*</Form.Label>
                     <Form.Control
-                        type="text"
+                        type="number"
                         placeholder="Ejemplo 150"
                         {...register("precio", {
-                            required: "El nombre del producto es obligatorio",
+                            required: "El precio del producto es obligatorio",
                             minLength: {
                                 value: 1,
                                 message: "El  precio debe tener como minimo 2 caracteres",
@@ -92,7 +92,7 @@ const EditarProducto = () => {
 
                 <Form.Group className="mb-3">
                     <Form.Label>Categoria*</Form.Label>
-                    <Form.Select>
+                    <Form.Select {...register("categoria")}>
                         <option value="cafe">Cafe</option>
                         <option value="jugos">Jugos</option>
                         <option value="comida">Comida</option>

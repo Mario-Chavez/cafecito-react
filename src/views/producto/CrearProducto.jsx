@@ -17,7 +17,7 @@ const CrearProducto = () => {
 
     return (
         <section className="container">
-            <h1 className="display-4 text-center mb-5">Crear Productos</h1>
+            <h1 className="display-4 text-center mb-5">Nuevo Producto</h1>
             <Form
                 onSubmit={handleSubmit(onSubmit)}
                 className=" mx-auto formulario p-2 border"

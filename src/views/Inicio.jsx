@@ -16,7 +16,7 @@ const Inicio = () => {
             <CardProducto />
 
             {/* <EditarProducto /> */}
-            {/* <CrearProducto /> */}
+            <CrearProducto />
             {/* <ItemProducto /> */}
             {/* <DetalleProducto />
             <Error404 /> */}

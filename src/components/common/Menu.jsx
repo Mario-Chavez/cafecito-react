@@ -1,11 +1,14 @@
 import React from "react";
-import { Container, NavDropdown, Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (
         <Navbar bg="danger" variant="dark" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Cafecito</Navbar.Brand>
+                <Navbar.Brand as={Link} to={"/"}>
+                    Cafecito
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -18,10 +21,22 @@ const Menu = () => {
                         style={{ maxHeight: "100px" }}
                         navbarScroll
                     >
-                        <Nav.Link href="#inicio">Inicio</Nav.Link>
-                        <Nav.Link href="#registro">Registro</Nav.Link>
-                        <Nav.Link href="#administrador">Administrador</Nav.Link>
-                        <Nav.Link href="#login">Login</Nav.Link>
+                        <NavLink end className={"nav-item nav-link"} to={"/"}>
+                            Inicio
+                        </NavLink>
+                        <NavLink end className={"nav-item nav-link"} to={"/registro"}>
+                            Registro
+                        </NavLink>
+                        <NavLink
+                            end
+                            className={"nav-item nav-link"}
+                            to={"/administrador"}
+                        >
+                            Administrador
+                        </NavLink>
+                        <NavLink end className={"nav-item nav-link"} to={"/login"}>
+                            Login
+                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

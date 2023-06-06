@@ -16,7 +16,6 @@ function App() {
     return (
         <BrowserRouter>
             <Menu />
-
             <Routes>
                 <Route exact path="/" element={<Inicio />}></Route>
                 <Route exact path="/registro" element={<Registro />}></Route>

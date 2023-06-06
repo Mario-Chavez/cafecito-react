@@ -12,7 +12,6 @@ const CrearProducto = () => {
     const onSubmit = (data) => {
         console.log("mi submit");
         console.log(data);
-        // setPacientes([...pacientes, { mascota, duenio, fecha, hora, sintomas }]);
     };
 
     return (
@@ -59,8 +58,11 @@ const CrearProducto = () => {
                             },
                             maxLength: {
                                 value: 7,
-                                message:
-                                    "El  precio debe tener como maximo 20 caracteres",
+                                message: "El  precio debe tener como maximo 7 caracteres",
+                            },
+                            pattern: {
+                                value: /^\d+(\.\d{1,2})?$/,
+                                message: "Por favor, ingresa un precio válido",
                             },
                         })}
                     />
@@ -75,7 +77,8 @@ const CrearProducto = () => {
                         type="text"
                         placeholder="Ingrese una URL"
                         {...register("url", {
-                            required: "Ej https://urldelaimagen.... ",
+                            required:
+                                "Este campo es obligatorio. Ej https://urldelaimagen.... ",
                             minLength: {
                                 value: 8,
                                 message: "La URL debe tener como minimo 8 caracteres",
@@ -84,6 +87,10 @@ const CrearProducto = () => {
                                 value: 200,
                                 message: "La URL debe tener  como maximo 200 caracteres",
                             },
+                            pattern: {
+                                value: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif))$/,
+                                message: "Por favor, ingresa una URL válida de imagen",
+                            },
                         })}
                     />
                     <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
@@ -91,12 +98,41 @@ const CrearProducto = () => {
 
                 <Form.Group className="mb-3">
                     <Form.Label>Categoria*</Form.Label>
-                    <Form.Select {...register("categoria")}>
-                        <option value="cafe">Cafe</option>
-                        <option value="jugos">Jugos</option>
-                        <option value="comida">Comida</option>
+                    <Form.Select
+                        {...register("categoria", { required: "Selecciona una opción" })}
+                    >
+                        <option value="">Seleccione una opcion</option>
+                        <option value="bebida caliente">Bebida caliente</option>
+                        <option value="bebida fria">Bebida fria</option>
+                        <option value="dulce">Dulce</option>
+                        <option value="salado">Salado</option>
                     </Form.Select>
-                    <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
+                    <Form.Text className="text-danger">
+                        {errors.categoria?.message}
+                    </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Label>Descripcion de producto*</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        roxs={3}
+                        {...register("descripcion", {
+                            required: "este campo es obligatorio",
+                            minLength: {
+                                value: 8,
+                                message:
+                                    "La descripcion debe tener como minimo 8 caracteres",
+                            },
+                            maxLength: {
+                                value: 400,
+                                message:
+                                    "La descripcion debe tener  como maximo 400 caracteres",
+                            },
+                        })}
+                    ></Form.Control>
+                    <Form.Text className="text-danger">
+                        {errors.descripcion?.message}
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group>

@@ -12,6 +12,8 @@ const Login = () => {
 
     const onSubmit = (ususario) => {
         // console.log(ususario);
+        /* aqui mandamos el ususario a la petision a la db, si la db no da respuesta no se guarda
+        en el sessionStorage caso contrariopp si , es porq el mail y el ususario si estan en la db  */
         login(ususario).then((respuesta) => {
             if (respuesta) {
                 sessionStorage.setItem("usuario", JSON.stringify(respuesta));
@@ -21,7 +23,7 @@ const Login = () => {
     };
 
     return (
-        <Container className="mainSection">
+        <Container className="mainSection mainPage">
             <Card className="my-5">
                 <Card.Header as="h5">Login</Card.Header>
                 <Card.Body>
@@ -33,6 +35,10 @@ const Login = () => {
                                 placeholder="Ingrese un email"
                                 {...register("email", {
                                     required: "este dato es obligatorio",
+                                    pattern: {
+                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                        message: "Ingresa un correo electrónico válido",
+                                    },
                                 })}
                             />
                             <Form.Text className="text-danger">
@@ -47,6 +53,21 @@ const Login = () => {
                                 placeholder="Password"
                                 {...register("password", {
                                     required: "este dato es obligatorio",
+                                    minLength: {
+                                        value: 6,
+                                        message:
+                                            "La contraseña debe tener al menos 6 caracteres",
+                                    },
+                                    maxLength: {
+                                        value: 20,
+                                        message:
+                                            "La contraseña debe tener como maximo 20 caracteres",
+                                    },
+                                    pattern: {
+                                        value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+                                        message:
+                                            "La contraseña debe contener al menos una letra mayúscula, una minúscula y un número",
+                                    },
                                 })}
                             />
                             <Form.Text className="text-danger">

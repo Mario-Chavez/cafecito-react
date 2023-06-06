@@ -3,19 +3,19 @@ import { Button, Container } from "react-bootstrap";
 
 const Administrador = () => {
     return (
-        <Container>
-            <div className="row">
+        <Container className="mainPage">
+            <div className="row mt-5">
                 <div className="display-4 col-8">
                     <h1>Nuestros Productos</h1>
                 </div>
                 <div className="col-4 d-flex justify-content-end">
-                    <button type="button" class="btn btn-outline-primary">
+                    <button type="button" className="btn btn-outline-primary">
                         Agregar Producto
                     </button>
                 </div>
             </div>
             <hr />
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Codigo</th>

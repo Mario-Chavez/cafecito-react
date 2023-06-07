@@ -10,8 +10,8 @@ const EditarProducto = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log("mi submit");
-        console.log(data);
+        // console.log("mi submit");
+        // console.log(data);
         // setPacientes([...pacientes, { mascota, duenio, fecha, hora, sintomas }]);
     };
 

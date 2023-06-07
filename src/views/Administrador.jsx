@@ -40,12 +40,12 @@ const Administrador = () => {
                             <Button variant="danger"> Borrar</Button>
                         </td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                         <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </Container>

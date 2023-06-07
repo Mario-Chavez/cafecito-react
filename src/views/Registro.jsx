@@ -10,7 +10,7 @@ const Registro = () => {
     } = useForm();
 
     const onSubmit = (data) => {
-        console.log(" de registro", data);
+        // console.log(" de registro", data);
     };
     return (
         <div className="mt-5 mainSection mainPage">

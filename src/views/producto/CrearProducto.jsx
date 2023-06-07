@@ -11,7 +11,7 @@ const CrearProducto = () => {
 
     const onSubmit = (data) => {
         console.log("mi submit");
-        console.log(data);
+        // console.log(data);
     };
 
     return (

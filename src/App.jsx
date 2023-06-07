@@ -11,11 +11,14 @@ import Registro from "./views/Registro";
 import Login from "./views/Login";
 import Error404 from "./views/Error404";
 import CrearProducto from "./views/producto/CrearProducto";
+import { useState } from "react";
 
 function App() {
+    const usuarioSessionStorage = JSON.parse(sessionStorage.getItem("usuario")) || [];
+    const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioSessionStorage);
     return (
         <BrowserRouter>
-            <Menu />
+            <Menu usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado} />
             <Routes>
                 <Route exact path="/" element={<Inicio />}></Route>
                 <Route exact path="/registro" element={<Registro />}></Route>
@@ -25,7 +28,11 @@ function App() {
                     path="/administrador/crear"
                     element={<CrearProducto />}
                 ></Route>
-                <Route exact path="/login" element={<Login />}></Route>
+                <Route
+                    exact
+                    path="/login"
+                    element={<Login setUsuarioLogeado={setUsuarioLogeado} />}
+                ></Route>
                 <Route exact path="/error" element={<Error404 />}></Route>
                 <Route path="*" element={<Error404 />}></Route>
             </Routes>

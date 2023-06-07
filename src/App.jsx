@@ -12,22 +12,28 @@ import Login from "./views/Login";
 import Error404 from "./views/Error404";
 import CrearProducto from "./views/producto/CrearProducto";
 import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdministardor from "./components/routes/RutasAdministardor";
 
 function App() {
-    const usuarioSessionStorage = JSON.parse(sessionStorage.getItem("usuario")) || [];
+    const usuarioSessionStorage = JSON.parse(sessionStorage.getItem("usuario")) || {};
     const [usuarioLogeado, setUsuarioLogeado] = useState(usuarioSessionStorage);
+
     return (
         <BrowserRouter>
             <Menu usuarioLogeado={usuarioLogeado} setUsuarioLogeado={setUsuarioLogeado} />
             <Routes>
                 <Route exact path="/" element={<Inicio />}></Route>
                 <Route exact path="/registro" element={<Registro />}></Route>
-                <Route exact path="/administrador" element={<Administrador />}></Route>
                 <Route
-                    exact
-                    path="/administrador/crear"
-                    element={<CrearProducto />}
+                    path="/administrador/*"
+                    element={
+                        <RutasProtegidas>
+                            <RutasAdministardor></RutasAdministardor>
+                        </RutasProtegidas>
+                    }
                 ></Route>
+
                 <Route
                     exact
                     path="/login"

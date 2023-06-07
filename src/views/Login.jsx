@@ -13,11 +13,11 @@ const Login = ({ setUsuarioLogeado }) => {
     } = useForm();
     const navegacion = useNavigate();
 
-    const onSubmit = (ususario) => {
+    const onSubmit = (usuario) => {
         // console.log(ususario);
         /* aqui mandamos el ususario a la petision a la db, si la db no da respuesta no se guarda
         en el sessionStorage caso contrariopp si , es porq el mail y el ususario si estan en la db  */
-        login(ususario).then((respuesta) => {
+        login(usuario).then((respuesta) => {
             if (respuesta) {
                 sessionStorage.setItem("usuario", JSON.stringify(respuesta));
                 setUsuarioLogeado(respuesta);

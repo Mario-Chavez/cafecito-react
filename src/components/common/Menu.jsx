@@ -8,7 +8,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
     const logOut = () => {
         sessionStorage.removeItem("usuario");
         /* seguir aqui */
-        setUsuarioLogeado([]);
+        setUsuarioLogeado({});
         navegacion("/");
     };
     return (
@@ -45,7 +45,7 @@ const Menu = ({ usuarioLogeado, setUsuarioLogeado }) => {
                                     Administrador
                                 </NavLink>
                                 <Button variant="dark" onClick={logOut}>
-                                    Salir
+                                    Logout
                                 </Button>
                             </>
                         ) : (

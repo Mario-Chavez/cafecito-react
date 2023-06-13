@@ -29,6 +29,13 @@ export const obtenerProductos = async () => {
         return productos;
     } catch (error) {}
 };
+export const obtenerUnProductos = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_PRODUCTOS}/${id}`);
+        const productoFiltrado = await respuesta.json();
+        return productoFiltrado;
+    } catch (error) {}
+};
 export const deleteProductosApi = async (id) => {
     try {
         const respuesta = await fetch(`${URL_PRODUCTOS}/${id}`, {

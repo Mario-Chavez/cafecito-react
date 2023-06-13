@@ -50,7 +50,10 @@ const ItemProducto = ({ producto, setProductos }) => {
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td>
-                <Link to={"/administrador/editar"} className="btn btn-warning">
+                <Link
+                    to={`/administrador/editar/${producto.id}`}
+                    className="btn btn-warning"
+                >
                     Editar
                 </Link>
                 <Button variant="danger" onClick={borrarProducto}>

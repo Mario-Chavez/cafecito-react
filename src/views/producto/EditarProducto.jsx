@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { obtenerUnProductos } from "../../helpers/queries";
+import { useParams } from "react-router-dom";
 
 const EditarProducto = () => {
+    /* hook de router-dom que se encarga de sacar los parametros q recibimos en la url  */
+    const { id } = useParams();
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
+        setValue,
     } = useForm();
+
+    useEffect(() => {
+        obtenerUnProductos(id).then((resp) => {
+            if (resp) {
+                setValue("nombreProducto", resp.nombreProducto);
+                setValue("categoria", resp.categoria);
+                setValue("imagen", resp.imagen);
+                setValue("descripcion", resp.descripcion);
+                setValue("precio", resp.precio);
+            } else {
+                console.log("sin respuesta");
+            }
+        });
+    }, []);
 
     const onSubmit = (data) => {
         // console.log("mi submit");
@@ -27,7 +47,7 @@ const EditarProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese un nombre de producto"
-                        {...register("producto", {
+                        {...register("nombreProducto", {
                             required: "Ejemplo Cafe",
                             minLength: {
                                 value: 2,
@@ -74,7 +94,7 @@ const EditarProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese una URL"
-                        {...register("url", {
+                        {...register("imagen", {
                             required: "Ej https://urldelaimagen.... ",
                             minLength: {
                                 value: 8,
@@ -97,6 +117,30 @@ const EditarProducto = () => {
                         <option value="comida">Comida</option>
                     </Form.Select>
                     <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Descripcion de producto*</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        roxs={3}
+                        {...register("descripcion", {
+                            required: "este campo es obligatorio",
+                            minLength: {
+                                value: 8,
+                                message:
+                                    "La descripcion debe tener como minimo 8 caracteres",
+                            },
+                            maxLength: {
+                                value: 400,
+                                message:
+                                    "La descripcion debe tener  como maximo 400 caracteres",
+                            },
+                        })}
+                    ></Form.Control>
+                    <Form.Text className="text-danger">
+                        {errors.descripcion?.message}
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group>

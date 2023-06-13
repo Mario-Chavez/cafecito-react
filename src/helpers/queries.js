@@ -31,7 +31,7 @@ export const obtenerProductos = async () => {
 };
 export const deleteProductosApi = async (id) => {
     try {
-        const respuesta = await fetch(`${URL_PRODUCTOS}/ ${id}`, {
+        const respuesta = await fetch(`${URL_PRODUCTOS}/${id}`, {
             method: "DELETE",
         });
         return respuesta;

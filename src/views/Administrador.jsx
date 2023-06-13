@@ -43,6 +43,7 @@ const Administrador = () => {
                         <ItemProducto
                             key={producto.id}
                             producto={producto}
+                            setProductos={setProductos}
                         ></ItemProducto>
                     ))}
                 </tbody>

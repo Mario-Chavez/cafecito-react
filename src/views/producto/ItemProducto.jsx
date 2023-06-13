@@ -2,8 +2,9 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { deleteProductosApi, obtenerProductos } from "../../helpers/queries";
 
-const ItemProducto = ({ producto }) => {
+const ItemProducto = ({ producto, setProductos }) => {
     const borrarProducto = () => {
         console.log("borrar");
         Swal.fire({
@@ -17,11 +18,26 @@ const ItemProducto = ({ producto }) => {
             cancelButtonText: "Cancelar!",
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                    "Producto Eliminado!",
-                    `${producto.nombreProducto} a sido eliminado.`,
-                    "success"
-                );
+                // aqui hago la peticion DELETE
+                deleteProductosApi(producto.id).then((resp) => {
+                    if (resp.status === 200) {
+                        Swal.fire(
+                            "Producto Eliminado!",
+                            `El producto : ${producto.nombreProducto} a sido eliminado.`,
+                            "success"
+                        );
+                        // actualizar el state producto del componente administardor
+                        obtenerProductos().then((resp) => {
+                            setProductos(resp);
+                        });
+                    } else {
+                        Swal.fire(
+                            "Se produjo un error !",
+                            `Intentele realizar esta operacion  mas tarde.`,
+                            "error"
+                        );
+                    }
+                });
             }
         });
     };

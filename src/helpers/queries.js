@@ -41,3 +41,17 @@ export const deleteProductosApi = async (id) => {
         console.log(error);
     }
 };
+export const createProductosApi = async (producto) => {
+    try {
+        const respuesta = await fetch(URL_PRODUCTOS, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+};

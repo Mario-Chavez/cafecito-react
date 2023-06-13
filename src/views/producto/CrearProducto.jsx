@@ -1,17 +1,35 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { createProductosApi } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearProducto = () => {
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("mi submit");
+    const onSubmit = (newProduct) => {
         // console.log(data);
+        createProductosApi(newProduct).then((resp) => {
+            if (resp.status === 201) {
+                Swal.fire(
+                    "Producto Agregado!",
+                    `El producto ${newProduct.nombreProducto} a sido agregado.`,
+                    "success"
+                );
+                reset();
+            } else {
+                Swal.fire(
+                    "Se produjo un error !",
+                    `Intentele realizar esta operacion  mas tarde.`,
+                    "error"
+                );
+            }
+        });
     };
 
     return (
@@ -26,7 +44,7 @@ const CrearProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese un nombre de producto"
-                        {...register("producto", {
+                        {...register("nombreProducto", {
                             required: "Ejemplo Cafe",
                             minLength: {
                                 value: 2,
@@ -76,7 +94,7 @@ const CrearProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese una URL"
-                        {...register("url", {
+                        {...register("imagen", {
                             required:
                                 "Este campo es obligatorio. Ej https://urldelaimagen.... ",
                             minLength: {

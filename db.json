@@ -7,6 +7,46 @@
       "categoria": "bebida caliente",
       "descripcion": "alguna descripcion",
       "imagen": "linkimagen"
+    },
+    {
+      "categoria": "dulce",
+      "descripcion": "ricaaaaaa",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "nombreProducto": "maria luna",
+      "precio": 656565,
+      "id": 2
+    },
+    {
+      "categoria": "dulce",
+      "descripcion": "ricaaaaaa chocolatada",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "nombreProducto": "chocolatada",
+      "precio": 100,
+      "id": 3
+    },
+    {
+      "nombreProducto": "facturas salada",
+      "precio": "1500",
+      "imagen": "https://pics.filmaffinity.com/awkwafina_is_nora_from_queens-598350873-large.jpg",
+      "categoria": "salado",
+      "descripcion": "Exquisitas medialunas saladas",
+      "id": 4
+    },
+    {
+      "nombreProducto": "pan",
+      "precio": "600",
+      "imagen": "https://pics.filmaffinity.com/how_to_get_rich-307675380-large.jpg",
+      "categoria": "dulce",
+      "descripcion": "pan muy rico",
+      "id": 5
+    },
+    {
+      "nombreProducto": "brouny",
+      "precio": "550",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "categoria": "bebida caliente",
+      "descripcion": "brauny salado caliente\n",
+      "id": 6
     }
   ],
   "usuarios": [

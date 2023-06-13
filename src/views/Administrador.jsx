@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { obtenerProductos } from "../helpers/queries";
 import ItemProducto from "./producto/ItemProducto";
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
     const [productos, setProductos] = useState([]);
@@ -21,9 +22,13 @@ const Administrador = () => {
                     <h1>Nuestros Productos</h1>
                 </div>
                 <div className="col-4 d-flex justify-content-end">
-                    <button type="button" className="btn btn-outline-primary">
+                    <Link
+                        type="button"
+                        className="btn btn-outline-primary"
+                        to={"/administrador/crear"}
+                    >
                         Agregar Producto
-                    </button>
+                    </Link>
                 </div>
             </div>
             <hr />

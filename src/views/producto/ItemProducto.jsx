@@ -26,7 +26,8 @@ const ItemProducto = ({ producto, setProductos }) => {
                             `El producto : ${producto.nombreProducto} a sido eliminado.`,
                             "success"
                         );
-                        // actualizar el state producto del componente administardor
+                        // actualizar el state producto del componente administardor llamamos la consulta a la api
+                        // y seteamos la respuesta en setPro la respues es un array de produjctos
                         obtenerProductos().then((resp) => {
                             setProductos(resp);
                         });

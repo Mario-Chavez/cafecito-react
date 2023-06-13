@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
+import { obtenerProductos } from "../helpers/queries";
+import ItemProducto from "./producto/ItemProducto";
 
 const Administrador = () => {
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        obtenerProductos().then((respuesta) => {
+            // console.log(respuesta);
+            setProductos(respuesta);
+            // todo: resolvcer el error si lo huibiera en coneccion en API
+        });
+    }, []);
+
     return (
         <Container className="mainPage">
             <div className="row mt-5">
@@ -27,25 +39,12 @@ const Administrador = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mocaccio Canela</td>
-                        <td>$ 1560</td>
-                        <td>
-                            https://media.istockphoto.com/id/1303583671/es/foto/taza-de-caf%C3%A9-con-humo-y-granos-de-caf%C3%A9-sobre-fondo-de-madera-viejo.jpg?s=612x612&w=0&k=20&c=44dPudamK4iq6pQf_GP-AcoEJJg-X4b10fuYxw8z1wM=
-                        </td>
-                        <td>Categoria</td>
-                        <td className="row mx-1">
-                            <Button variant="warning"> Editar</Button>
-                            <Button variant="danger"> Borrar</Button>
-                        </td>
-                    </tr>
-                    {/* <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr> */}
+                    {productos.map((producto) => (
+                        <ItemProducto
+                            key={producto.id}
+                            producto={producto}
+                        ></ItemProducto>
+                    ))}
                 </tbody>
             </table>
         </Container>

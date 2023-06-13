@@ -1,20 +1,44 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const ItemProducto = () => {
+const ItemProducto = ({ producto }) => {
+    const borrarProducto = () => {
+        console.log("borrar");
+        Swal.fire({
+            title: "Estas seguro de eliminar el producto?",
+            text: "No se puede revertir este paso!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Borrar!",
+            cancelButtonText: "Cancelar!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    "Producto Eliminado!",
+                    `${producto.nombreProducto} a sido eliminado.`,
+                    "success"
+                );
+            }
+        });
+    };
     return (
         <tr>
-            {/* <td>{props.producto._id}</td> */}
-            <td>1</td>
-            <td>MOCHACCINO CANELA</td>
-            <td>$1.740,00</td>
+            <td>{producto.id}</td>
+            <td>{producto.nombreProducto}</td>
+            <td>$ {producto.precio}</td>
+            <td>{producto.imagen}</td>
+            <td>{producto.categoria}</td>
             <td>
-                https://images.pexels.com/photos/6802983/pexels-photo-6802983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
-            </td>
-            <td>Café</td>
-            <td>
-                <Button className="btn btn-warning">Editar</Button>
-                <Button variant="danger">Borrar</Button>
+                <Link to={"/administrador/editar"} className="btn btn-warning">
+                    Editar
+                </Link>
+                <Button variant="danger" onClick={borrarProducto}>
+                    Borrar
+                </Button>
             </td>
         </tr>
     );

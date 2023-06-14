@@ -1,18 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { consultaEditarProductosApi, obtenerUnProductos } from "../../helpers/queries";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const EditarProducto = () => {
+    /* hook de router-dom que se encarga de sacar los parametros q recibimos en la url  */
+    const { id } = useParams();
+    const navegacion = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
+        setValue,
     } = useForm();
 
-    const onSubmit = (data) => {
-        // console.log("mi submit");
-        // console.log(data);
-        // setPacientes([...pacientes, { mascota, duenio, fecha, hora, sintomas }]);
+    useEffect(() => {
+        obtenerUnProductos(id).then((resp) => {
+            if (resp) {
+                setValue("nombreProducto", resp.nombreProducto);
+                setValue("categoria", resp.categoria);
+                setValue("imagen", resp.imagen);
+                setValue("descripcion", resp.descripcion);
+                setValue("precio", resp.precio);
+            } else {
+                console.log("sin respuesta");
+            }
+        });
+    }, []);
+
+    const onSubmit = (productEdit) => {
+        // console.log(productEdit);
+        consultaEditarProductosApi(productEdit, id).then((resp) => {
+            if (resp && resp.status === 200) {
+                Swal.fire(
+                    "Producto Actualizado!",
+                    `El producto : ${productEdit.nombreProducto} a sido actualizado correctamente.`,
+                    "success"
+                );
+                navegacion("/administrador");
+            } else {
+                Swal.fire(
+                    "Se produjo un error!",
+                    `El producto : ${productEdit.nombreProducto} no fue actualizado, intentelo en breve.`,
+                    "error"
+                );
+            }
+        });
     };
 
     return (
@@ -27,7 +62,7 @@ const EditarProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese un nombre de producto"
-                        {...register("producto", {
+                        {...register("nombreProducto", {
                             required: "Ejemplo Cafe",
                             minLength: {
                                 value: 2,
@@ -74,7 +109,7 @@ const EditarProducto = () => {
                     <Form.Control
                         type="text"
                         placeholder="Ingrese una URL"
-                        {...register("url", {
+                        {...register("imagen", {
                             required: "Ej https://urldelaimagen.... ",
                             minLength: {
                                 value: 8,
@@ -92,11 +127,35 @@ const EditarProducto = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Categoria*</Form.Label>
                     <Form.Select {...register("categoria")}>
-                        <option value="cafe">Cafe</option>
-                        <option value="jugos">Jugos</option>
-                        <option value="comida">Comida</option>
+                        <option value="bebida caliente">Bebida caliente</option>
+                        <option value="dulce">Dulce</option>
+                        <option value="salado">Salado</option>
                     </Form.Select>
                     <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Descripcion de producto*</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        roxs={3}
+                        {...register("descripcion", {
+                            required: "este campo es obligatorio",
+                            minLength: {
+                                value: 8,
+                                message:
+                                    "La descripcion debe tener como minimo 8 caracteres",
+                            },
+                            maxLength: {
+                                value: 400,
+                                message:
+                                    "La descripcion debe tener  como maximo 400 caracteres",
+                            },
+                        })}
+                    ></Form.Control>
+                    <Form.Text className="text-danger">
+                        {errors.descripcion?.message}
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group>

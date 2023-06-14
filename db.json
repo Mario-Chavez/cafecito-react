@@ -1,11 +1,60 @@
 {
-    "productos": [
-      { "id": 1, "nombreProducto": "café", "precio": 200, "categoria":"bebida caliente", "descripcion":"alguna descripcion", "imagen":"linkimagen" },
-      { "id": 2, "nombreProducto": "te", "precio": 100, "categoria":"bebida caliente", "descripcion":"alguna descripcion", "imagen":"linkimagen" },
-      { "id": 3, "nombreProducto": "medialuna", "precio": 150, "categoria":"dulce", "descripcion":"alguna descripcion", "imagen":"linkimagen" },
-      { "id": 4, "nombreProducto": "medialuna2222", "precio": 150, "categoria":"dulce", "descripcion":"alguna descripcion", "imagen":"linkimagen" }
-    ],
-    "usuarios": [
-      { "id": 1, "nombreUsuario": "admin", "email":"admin@gmail.com", "password":"A12345i" }
-    ]
-  }
+  "productos": [
+    {
+      "id": 1,
+      "nombreProducto": "café",
+      "precio": 200,
+      "categoria": "bebida caliente",
+      "descripcion": "alguna descripcion",
+      "imagen": "linkimagen"
+    },
+    {
+      "categoria": "dulce",
+      "descripcion": "ricaaaaaa media luna",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "nombreProducto": "madia luna",
+      "precio": 656,
+      "id": 2
+    },
+    {
+      "categoria": "dulce",
+      "descripcion": "ricaaaaaa chocolatada",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "nombreProducto": "chocolatada",
+      "precio": 100,
+      "id": 3
+    },
+    {
+      "nombreProducto": "facturas salada",
+      "precio": "1500",
+      "imagen": "https://pics.filmaffinity.com/awkwafina_is_nora_from_queens-598350873-large.jpg",
+      "categoria": "salado",
+      "descripcion": "Exquisitas medialunas saladas",
+      "id": 4
+    },
+    {
+      "nombreProducto": "pann",
+      "precio": "600",
+      "imagen": "https://pics.filmaffinity.com/how_to_get_rich-307675380-large.jpg",
+      "categoria": "dulce",
+      "descripcion": "pan muy rico",
+      "id": 5
+    },
+    {
+      "nombreProducto": "brownie nuevo",
+      "precio": "550",
+      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "categoria": "dulce",
+      "descripcion": "brauny dulce rico\n",
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@gmail.com",
+      "password": "A12345i"
+    }
+  ]
+}

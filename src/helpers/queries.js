@@ -1,5 +1,6 @@
 // llamar vartiable de entorno
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO;
+const URL_PRODUCTOS = import.meta.env.VITE_API_PRODUCTO;
 
 export const login = async (usuario) => {
     try {
@@ -19,4 +20,59 @@ export const login = async (usuario) => {
         }
         console.log("email no encontrado");
     } catch (error) {}
+};
+
+export const obtenerProductos = async () => {
+    try {
+        const respuesta = await fetch(URL_PRODUCTOS);
+        const productos = await respuesta.json();
+        return productos;
+    } catch (error) {}
+};
+export const obtenerUnProductos = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_PRODUCTOS}/${id}`);
+        const productoFiltrado = await respuesta.json();
+        return productoFiltrado;
+    } catch (error) {}
+};
+export const deleteProductosApi = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_PRODUCTOS}/${id}`, {
+            method: "DELETE",
+        });
+        return respuesta;
+        // const productos = await respuesta.json();
+        // return productos;
+    } catch (error) {
+        console.log(error);
+    }
+};
+export const createProductosApi = async (producto) => {
+    try {
+        const respuesta = await fetch(URL_PRODUCTOS, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+};
+export const consultaEditarProductosApi = async (producto, id) => {
+    try {
+        const respuesta = await fetch(URL_PRODUCTOS + "/" + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
 };

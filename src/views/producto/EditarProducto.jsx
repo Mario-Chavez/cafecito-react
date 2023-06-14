@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { obtenerUnProductos } from "../../helpers/queries";
-import { useParams } from "react-router-dom";
+import { consultaEditarProductosApi, obtenerUnProductos } from "../../helpers/queries";
+import { useNavigate, useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const EditarProducto = () => {
     /* hook de router-dom que se encarga de sacar los parametros q recibimos en la url  */
     const { id } = useParams();
+    const navegacion = useNavigate();
     const {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
         setValue,
     } = useForm();
 
@@ -29,10 +30,24 @@ const EditarProducto = () => {
         });
     }, []);
 
-    const onSubmit = (data) => {
-        // console.log("mi submit");
-        // console.log(data);
-        // setPacientes([...pacientes, { mascota, duenio, fecha, hora, sintomas }]);
+    const onSubmit = (productEdit) => {
+        // console.log(productEdit);
+        consultaEditarProductosApi(productEdit, id).then((resp) => {
+            if (resp && resp.status === 200) {
+                Swal.fire(
+                    "Producto Actualizado!",
+                    `El producto : ${productEdit.nombreProducto} a sido actualizado correctamente.`,
+                    "success"
+                );
+                navegacion("/administrador");
+            } else {
+                Swal.fire(
+                    "Se produjo un error!",
+                    `El producto : ${productEdit.nombreProducto} no fue actualizado, intentelo en breve.`,
+                    "error"
+                );
+            }
+        });
     };
 
     return (
@@ -112,9 +127,9 @@ const EditarProducto = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Categoria*</Form.Label>
                     <Form.Select {...register("categoria")}>
-                        <option value="cafe">Cafe</option>
-                        <option value="jugos">Jugos</option>
-                        <option value="comida">Comida</option>
+                        <option value="bebida caliente">Bebida caliente</option>
+                        <option value="dulce">Dulce</option>
+                        <option value="salado">Salado</option>
                     </Form.Select>
                     <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
                 </Form.Group>

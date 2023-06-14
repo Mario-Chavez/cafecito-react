@@ -121,7 +121,6 @@ const CrearProducto = () => {
                     >
                         <option value="">Seleccione una opcion</option>
                         <option value="bebida caliente">Bebida caliente</option>
-                        <option value="bebida fria">Bebida fria</option>
                         <option value="dulce">Dulce</option>
                         <option value="salado">Salado</option>
                     </Form.Select>

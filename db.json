@@ -10,10 +10,10 @@
     },
     {
       "categoria": "dulce",
-      "descripcion": "ricaaaaaa",
+      "descripcion": "ricaaaaaa media luna",
       "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
-      "nombreProducto": "maria luna",
-      "precio": 656565,
+      "nombreProducto": "madia luna",
+      "precio": 656,
       "id": 2
     },
     {
@@ -41,11 +41,11 @@
       "id": 5
     },
     {
-      "nombreProducto": "brouny",
+      "nombreProducto": "brownie nuevo",
       "precio": "550",
       "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
-      "categoria": "bebida caliente",
-      "descripcion": "brauny salado caliente\n",
+      "categoria": "dulce",
+      "descripcion": "brauny dulce rico\n",
       "id": 6
     }
   ],

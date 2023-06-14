@@ -62,3 +62,17 @@ export const createProductosApi = async (producto) => {
         console.log(error);
     }
 };
+export const consultaEditarProductosApi = async (producto, id) => {
+    try {
+        const respuesta = await fetch(URL_PRODUCTOS + "/" + id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(producto),
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error);
+    }
+};

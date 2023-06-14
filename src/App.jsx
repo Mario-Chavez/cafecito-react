@@ -9,8 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registro from "./views/Registro";
 import Login from "./views/Login";
+import DetalleProducto from "./views/DetalleProducto";
 import Error404 from "./views/Error404";
-import CrearProducto from "./views/producto/CrearProducto";
 import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdministardor from "./components/routes/RutasAdministardor";
@@ -25,6 +25,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Inicio />}></Route>
                 <Route exact path="/registro" element={<Registro />}></Route>
+                <Route exact path="/detalle" element={<DetalleProducto />}></Route>
                 <Route
                     path="/administrador/*"
                     element={

@@ -59,7 +59,7 @@ const CrearProducto = () => {
                         })}
                     />
                     <Form.Text className="text-danger">
-                        {errors.producto?.message}
+                        {errors.nombreProducto?.message}
                     </Form.Text>
                 </Form.Group>
 
@@ -102,16 +102,18 @@ const CrearProducto = () => {
                                 message: "La URL debe tener como minimo 8 caracteres",
                             },
                             maxLength: {
-                                value: 200,
+                                value: 250,
                                 message: "La URL debe tener  como maximo 200 caracteres",
                             },
                             pattern: {
-                                value: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif))$/,
+                                value: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|sph))$/,
                                 message: "Por favor, ingresa una URL válida de imagen",
                             },
                         })}
                     />
-                    <Form.Text className="text-danger">{errors.url?.message}</Form.Text>
+                    <Form.Text className="text-danger">
+                        {errors.imagen?.message}
+                    </Form.Text>
                 </Form.Group>
 
                 <Form.Group className="mb-3">

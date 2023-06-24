@@ -1,6 +1,6 @@
 // llamar vartiable de entorno
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO;
-const URL_PRODUCTOS = import.meta.env.VITE_API_PRODUCTO;
+const URL_PRODUCTOS = import.meta.env.VITE_API_PRODUCTOS;
 
 export const login = async (usuario) => {
     try {
@@ -20,6 +20,22 @@ export const login = async (usuario) => {
         }
         console.log("email no encontrado");
     } catch (error) {}
+};
+
+export const signUp = async (user) => {
+    try {
+        const respuesta = await fetch(URL_USUARIO, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        });
+        const nuevoUsuario = await respuesta.json();
+        return nuevoUsuario;
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 export const obtenerProductos = async () => {

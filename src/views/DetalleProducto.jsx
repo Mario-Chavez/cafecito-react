@@ -1,22 +1,35 @@
-import React from "react";
-import { Image, Row, Col, Container } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Image, Row, Col, Container, Card } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { obtenerUnProductos } from "../helpers/queries";
 
 const DetalleProducto = () => {
+    const { id } = useParams();
+    const [producto, setProducto] = useState("");
+
+    useEffect(() => {
+        obtenerUnProductos(id).then((res) => {
+            setProducto(res);
+        });
+    }, []);
+
     return (
-        <Container>
-            <Row>
-                <Col md={6}>
-                    <Image
-                        src={
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8RZeTjDoZV9cHVGa0I7j_GTWS-u_Z9-411XG0klVBi-ucbM0A_-X5ir_ns5JDarPodKw&usqp=CAU"
-                        }
-                        alt="cafe"
-                        fluid
+        <Container className="mainPage">
+            <Row className="featured-color my-md-4 text-center my-5">
+                <Col md={5} lg={6} className="p-0">
+                    <img
+                        className="w-75 rounded-5"
+                        src={producto.imagen}
+                        alt={producto.nombreProducto}
                     />
                 </Col>
-                <Col md={6}>
-                    <h2>Soy titulo</h2>
-                    <p>soy el texto</p>
+                <Col md={7} lg={6} className="px-4">
+                    <h2 className="mt-3 mt-lg-5 mb-3">{producto.nombreProducto}</h2>
+                    <p className="">{producto.descripcion}</p>
+                    <p className="">
+                        Precio:{" "}
+                        <span className="text-danger fw-bold"> ${producto.precio}</span>
+                    </p>
                 </Col>
             </Row>
         </Container>

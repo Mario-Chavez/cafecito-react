@@ -10,27 +10,21 @@ const CarouseComp = () => {
                 <Carousel.Item>
                     <img className="d-block w-100" src={cafe} alt="First slide" />
                     <Carousel.Caption>
-                        <h3>Primer imagen</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Cafecito App</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="d-block w-100" src={taza} alt="Second slide" />
 
                     <Carousel.Caption>
-                        <h3>Segunda imagen</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Cafecito App</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="d-block w-100" src={granos} alt="Third slide" />
 
                     <Carousel.Caption>
-                        <h3>Tercera imagen</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl
-                            consectetur.
-                        </p>
+                        <h3>Cafecito App</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

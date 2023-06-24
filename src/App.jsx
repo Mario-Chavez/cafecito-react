@@ -25,7 +25,7 @@ function App() {
             <Routes>
                 <Route exact path="/" element={<Inicio />}></Route>
                 <Route exact path="/registro" element={<Registro />}></Route>
-                <Route exact path="/detalle" element={<DetalleProducto />}></Route>
+                <Route exact path="/detalle/:id" element={<DetalleProducto />}></Route>
                 <Route
                     path="/administrador/*"
                     element={

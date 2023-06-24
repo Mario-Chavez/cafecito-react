@@ -6,12 +6,12 @@
       "precio": 200,
       "categoria": "bebida caliente",
       "descripcion": "alguna descripcion",
-      "imagen": "linkimagen"
+      "imagen": "https://img.freepik.com/vector-gratis/taza-realista-cafe-negro-elaborado-ilustracion-vector-platillo_1284-66002.jpg?size=626&ext=jpg&ga=GA1.1.1548724038.1685468917&semt=ais"
     },
     {
       "categoria": "dulce",
       "descripcion": "ricaaaaaa media luna",
-      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "imagen": "https://img.freepik.com/foto-gratis/primer-plano-vertical-deliciosos-postres-recien-horneados_181624-32468.jpg?size=626&ext=jpg&ga=GA1.1.1548724038.1685468917&semt=sph",
       "nombreProducto": "madia luna",
       "precio": 656,
       "id": 2
@@ -19,7 +19,7 @@
     {
       "categoria": "dulce",
       "descripcion": "ricaaaaaa chocolatada",
-      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "imagen": "https://img.freepik.com/foto-gratis/vista-frontal-vaso-batido-bandeja-coco-chocolate_23-2148707825.jpg?size=626&ext=jpg&ga=GA1.2.1548724038.1685468917&semt=sph",
       "nombreProducto": "chocolatada",
       "precio": 100,
       "id": 3
@@ -27,7 +27,7 @@
     {
       "nombreProducto": "facturas salada",
       "precio": "1500",
-      "imagen": "https://pics.filmaffinity.com/awkwafina_is_nora_from_queens-598350873-large.jpg",
+      "imagen": "https://img.freepik.com/foto-gratis/croissants-caseros-sabrosos-frescos-blanco-grisaceo-pasteleria-francesa_114579-4913.jpg?size=626&ext=jpg&ga=GA1.2.1548724038.1685468917&semt=sph",
       "categoria": "salado",
       "descripcion": "Exquisitas medialunas saladas",
       "id": 4
@@ -35,7 +35,7 @@
     {
       "nombreProducto": "pann",
       "precio": "600",
-      "imagen": "https://pics.filmaffinity.com/how_to_get_rich-307675380-large.jpg",
+      "imagen": "https://img.freepik.com/foto-gratis/bollos-pan-rama-trigo-sobre-mesa_140725-2705.jpg?size=626&ext=jpg&ga=GA1.1.1548724038.1685468917&semt=sph",
       "categoria": "dulce",
       "descripcion": "pan muy rico",
       "id": 5
@@ -43,7 +43,7 @@
     {
       "nombreProducto": "brownie nuevo",
       "precio": "550",
-      "imagen": "https://pics.filmaffinity.com/les_trois_mousquetaires_d_artagnan-370301361-large.jpg",
+      "imagen": "https://img.freepik.com/foto-gratis/tarta-pastel-brownie-chocolate-platos-caseros_114579-582.jpg?size=626&ext=jpg&ga=GA1.1.1548724038.1685468917&semt=sph",
       "categoria": "dulce",
       "descripcion": "brauny dulce rico\n",
       "id": 6

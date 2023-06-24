@@ -1,6 +1,6 @@
 // llamar vartiable de entorno
 const URL_USUARIO = import.meta.env.VITE_API_USUARIO;
-const URL_PRODUCTOS = import.meta.env.VITE_API_PRODUCTO;
+const URL_PRODUCTOS = import.meta.env.VITE_API_PRODUCTOS;
 
 export const login = async (usuario) => {
     try {

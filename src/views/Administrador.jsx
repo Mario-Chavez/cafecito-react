@@ -9,9 +9,7 @@ const Administrador = () => {
 
     useEffect(() => {
         obtenerProductos().then((respuesta) => {
-            // console.log(respuesta);
             setProductos(respuesta);
-            // todo: resolvcer el error si lo huibiera en coneccion en API
         });
     }, []);
 

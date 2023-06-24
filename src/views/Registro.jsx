@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { signUp } from "../helpers/queries";
 
 const Registro = () => {
     const {
@@ -9,8 +10,10 @@ const Registro = () => {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        // console.log(" de registro", data);
+    const onSubmit = (newUser) => {
+        signUp(newUser).then((res) => {
+            console.log(res);
+        });
     };
     return (
         <div className="mt-5 mainSection mainPage">
@@ -18,22 +21,23 @@ const Registro = () => {
             <div className="row justify-content-center">
                 <div className="col-12 col-sm-8 col-md-6 col-xl-4">
                     <Form onSubmit={handleSubmit(onSubmit)}>
-                        <Form.Group className="mb-3">
+                        <Form.Group className="">
                             <Form.Label>Nombre:</Form.Label>
                             <Form.Control
+                                className="input"
                                 type="text"
                                 placeholder="Ingrese un nombre de usuario"
-                                {...register("nombre", {
+                                {...register("nombreUsuario", {
                                     required: "Este campo es obligatorio",
                                     minLength: {
-                                        value: 6,
+                                        value: 2,
                                         message:
-                                            "La contraseña debe tener al menos 6 caracteres",
+                                            "El nombre debe tener al menos 6 caracteres",
                                     },
                                     maxLength: {
                                         value: 20,
                                         message:
-                                            "La contraseña debe tener como maximo 20 caracteres",
+                                            "El nombre  debe tener como maximo 20 caracteres",
                                     },
                                     pattern: {
                                         value: /^(?!\s)(.*\S)$/,
@@ -43,12 +47,13 @@ const Registro = () => {
                                 })}
                             />
                             <Form.Text className="text-danger">
-                                {errors.nombre?.message}
+                                {errors.nombreUsuario?.message}
                             </Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-2">
                             <Form.Label>Email:</Form.Label>
                             <Form.Control
+                                className="input"
                                 type="email"
                                 placeholder="Ingrese un email"
                                 {...register("email", {
@@ -66,6 +71,7 @@ const Registro = () => {
                         <Form.Group className="mb-4">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control
+                                className="input"
                                 type="password"
                                 placeholder="Password"
                                 {...register("password", {

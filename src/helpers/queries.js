@@ -22,6 +22,22 @@ export const login = async (usuario) => {
     } catch (error) {}
 };
 
+export const signUp = async (user) => {
+    try {
+        const respuesta = await fetch(URL_USUARIO, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        });
+        const nuevoUsuario = await respuesta.json();
+        return nuevoUsuario;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export const obtenerProductos = async () => {
     try {
         const respuesta = await fetch(URL_PRODUCTOS);

@@ -55,6 +55,12 @@
       "nombreUsuario": "admin",
       "email": "admin@gmail.com",
       "password": "A12345i"
+    },
+    {
+      "nombreUsuario": "marito",
+      "email": "marioachavez1@gmail.com",
+      "password": "A1marito",
+      "id": 2
     }
   ]
 }

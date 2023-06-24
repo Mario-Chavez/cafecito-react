@@ -47,6 +47,14 @@
       "categoria": "dulce",
       "descripcion": "brauny dulce rico\n",
       "id": 6
+    },
+    {
+      "nombreProducto": "Pastel de cumpleaños",
+      "precio": "9500",
+      "imagen": "https://img.freepik.com/fotos-premium/mujer-pastelera-decora-pastel-rosa-macarrones-bayas-primer-plano-proceso-elaboracion-pasteles-enfoque-selectivo_94255-5305.jpg",
+      "categoria": "dulce",
+      "descripcion": "Rico pastel de cumpleaños bañado en merengue rosa",
+      "id": 7
     }
   ],
   "usuarios": [

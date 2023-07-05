@@ -30,27 +30,41 @@ const Administrador = () => {
                 </div>
             </div>
             <hr />
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Codigo</th>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Url Imagen</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {productos.map((producto) => (
-                        <ItemProducto
-                            key={producto.id}
-                            producto={producto}
-                            setProductos={setProductos}
-                        ></ItemProducto>
-                    ))}
-                </tbody>
-            </table>
+            <div className="table-responsive">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th className="text-truncate" scope="col">
+                                Codigo
+                            </th>
+                            <th className="text-truncate" scope="col">
+                                Producto
+                            </th>
+                            <th className="text-truncate" scope="col">
+                                Precio
+                            </th>
+                            <th className="text-truncate" scope="col">
+                                Url Imagen
+                            </th>
+                            <th className="text-truncate" scope="col">
+                                Categoria
+                            </th>
+                            <th className="text-truncate" scope="col">
+                                Opciones
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {productos.map((producto) => (
+                            <ItemProducto
+                                key={producto._id}
+                                producto={producto}
+                                setProductos={setProductos}
+                            ></ItemProducto>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </Container>
     );
 };

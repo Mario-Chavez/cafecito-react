@@ -8,7 +8,7 @@ const CardProducto = ({ producto }) => {
         <>
             <Row className=" justify-content-center my-5">
                 {producto.map((producto) => (
-                    <Col sm={6} md={4} lg={3} key={producto.id} className="my-2">
+                    <Col sm={6} md={4} lg={3} key={producto._id} className="my-2">
                         <Card className="rounded-0 h-100">
                             <Card.Img
                                 className="rounded-3 card-imagen"
@@ -21,7 +21,7 @@ const CardProducto = ({ producto }) => {
                                     {producto.nombreProducto}
                                 </Card.Title>
                                 <Link
-                                    to={`/detalle/${producto.id}`}
+                                    to={`/detalle/${producto._id}`}
                                     type="button"
                                     className="btn btn-danger"
                                 >

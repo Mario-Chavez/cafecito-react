@@ -19,7 +19,7 @@ const ItemProducto = ({ producto, setProductos }) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // aqui hago la peticion DELETE
-                deleteProductosApi(producto.id).then((resp) => {
+                deleteProductosApi(producto._id).then((resp) => {
                     if (resp.status === 200) {
                         Swal.fire(
                             "Producto Eliminado!",
@@ -44,14 +44,14 @@ const ItemProducto = ({ producto, setProductos }) => {
     };
     return (
         <tr>
-            <td>{producto.id}</td>
+            <td>{producto._id}</td>
             <td>{producto.nombreProducto}</td>
             <td>$ {producto.precio}</td>
             <td>{producto.imagen}</td>
             <td>{producto.categoria}</td>
             <td>
                 <Link
-                    to={`/administrador/editar/${producto.id}`}
+                    to={`/administrador/editar/${producto._id}`}
                     className="btn btn-warning"
                 >
                     Editar

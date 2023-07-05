@@ -31,7 +31,6 @@ const EditarProducto = () => {
     }, []);
 
     const onSubmit = (productEdit) => {
-        // console.log(productEdit);
         consultaEditarProductosApi(productEdit, id).then((resp) => {
             if (resp && resp.status === 200) {
                 Swal.fire(
